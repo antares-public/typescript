@@ -1,14 +1,20 @@
 export {};
 
 let message: string = "Hello World";
-console.log(message);
+console.log(`Message: ${message}`);
 
-const numberArray: number[] = [1, 2, 3]; // array
-const numberArray2: Array<number> = [1, 2, 3]; // array
+let age: number = 12;
+console.log(`Age: ${age}`);
 
-// number
-// string
-// boolean
+let isAuth: boolean = false;
+isAuth = true;
+console.log(`isAuth: ${isAuth}`);
+
+// =====================
+
+const numberArray: number[] = [1, 2, 3];
+// const numberArray2: Array<number> = [1, 2, 3];
+console.log(`[${numberArray}] - Array`);
 
 // Tuple
 const contact: [string, number] = ["Vladilen", 1234567];
@@ -19,23 +25,15 @@ let variable: any = 42; // all
 variable = "New String";
 variable = true;
 
-// ====
+// =====================
 function sayMyName(name: string): void {
-  console.log(name);
-}
-
-function Fn(a: number, b: number): number {
-  return a + b;
+  console.log(name); // return
 }
 
 // Never
-
 function throwError(message: string): never {
   throw new Error(message);
 }
-
-// console.log(throwError("kel"));
-console.log(Fn(1, 2));
 
 function infinite(): never {
   while (true) {}
