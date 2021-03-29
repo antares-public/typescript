@@ -24,6 +24,8 @@ var Typescript = /** @class */ (function () {
     };
     return Typescript;
 }());
+var typescript = new Typescript("1.2");
+console.log(typescript.info("Name"));
 // class Car {
 //   readonly model: string;
 //   readonly numberOfWheels: number = 4;
@@ -39,14 +41,14 @@ var Car = /** @class */ (function () {
     return Car;
 }());
 // =========
-//modification
 var Animal = /** @class */ (function () {
     function Animal() {
         this.voice = "";
         this.color = "black";
+        this.go();
     }
     Animal.prototype.go = function () {
-        console.log("go");
+        console.log("voice");
     };
     return Animal;
 }());
@@ -61,3 +63,25 @@ var Cat = /** @class */ (function (_super) {
     return Cat;
 }(Animal));
 var cat = new Cat();
+cat.setVoice("meow");
+cat.color = "white";
+console.log(cat);
+// ================
+var Component = /** @class */ (function () {
+    function Component() {
+    }
+    return Component;
+}());
+var AddComponent = /** @class */ (function (_super) {
+    __extends(AddComponent, _super);
+    function AddComponent() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    AddComponent.prototype.render = function () {
+        console.log("Component on render");
+    };
+    AddComponent.prototype.info = function () {
+        return "This is info";
+    };
+    return AddComponent;
+}(Component));
